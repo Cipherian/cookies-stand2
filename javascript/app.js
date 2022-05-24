@@ -5,7 +5,6 @@ function City(storeLocation, minCustomers, maxCustomers, averageCookieSale) {
   this.minCustomers = minCustomers;
   this.maxCustomers = maxCustomers;
   this.averageCookieSale = averageCookieSale;
-  this.sum = [];
 }
 
 let storeHours = [
@@ -45,10 +44,21 @@ City.prototype.tableHead = function () {
   }
   elemHead.appendChild(rowElem);
 };
-
-function renderFooter() {
-City.prototype.tableBody = function () {
+function renderHour() {
   let elemBody = document.getElementById("tbody");
+  let rowElem = document.createElement("tr");
+  for (let i = 0; i < storeHours.length; i++) {
+    let storeHour = storeHours[i];
+    let dataElem = document.createElement('td');
+    dataElem.innerText = storeHour;
+    rowElem.appendChild(dataElem)
+  }
+  elemBody.appendChild(rowElem);
+}
+function renderFooter() {
+}
+City.prototype.tableBody = function () {
+  let elemBody = document.getElementById("tbody2");
   let rowElem = document.createElement("tr");
 
   for (let j = 0; j < storeHours.length; j++) {
@@ -66,6 +76,7 @@ City.prototype.tableBody = function () {
   elemBody.appendChild(rowElem);
 };
 
+renderHour();
 
 for (let i = 0; i < cities.length; i++) {
   let cit = cities[i];
