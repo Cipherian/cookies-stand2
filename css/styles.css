@@ -8,22 +8,35 @@ header {
   font-size: 3rem;
   text-align: center;
 }
+.overflowScroll {
+  height: 300px;
+}
 
 table {
   color:black;
+  margin-left: 100px;
+  margin-right:100px;
+  background-color: lightskyblue;
 }
-tr {
-  display: inline-flex;
-  flex-direction: column;
-}
+
 td {
-  width: 200px;
+  width: 100px;
   height: 50px;
   border: 2px solid black;
 }
-
-thead > tr {
+#thead {
+  margin-left: 50px;
+}
+#tbody {
   text-align: center;
   text-decoration: bold;
-  font-size: 2rem;
+  text-decoration: underline 2px;
+  font-size: 1.25em;
+}
+#tbody3 > tr {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: 2px underline;
+  float:left;
+  position:absolute;
 }
