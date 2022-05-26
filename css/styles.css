@@ -23,6 +23,7 @@ td {
   width: 100px;
   height: 50px;
   border: 2px solid black;
+  text-align: center;
 }
 #thead {
   margin-left: 50px;
@@ -33,10 +34,12 @@ td {
   text-decoration: underline 2px;
   font-size: 1.25em;
 }
-#tbody3 > tr {
-  display: inline-flex;
-  flex-direction: column;
-  text-decoration: 2px underline;
-  float:left;
-  position:absolute;
+th {
+  background-color: lightsalmon;
+}
+img {
+  margin-top: 100px;
+  width:600px;
+  height:200px;
+  display:block;
 }
