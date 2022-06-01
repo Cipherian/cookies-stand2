@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+html {
+  color:black;
+  background-color: blanchedalmond;
+}
+
+.header {
+  display:flex;
+  justify-content: center;
+  background-color: lightblue;
+  color:lightcoral;
+  text-shadow: 0 0 2px black;
+  font-family: monospace;
+  font-size: 1.5rem;
+}
+main {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+ul {
+  display:flex;
+  justify-content: space-between;
+  margin-left: 15%;
+  margin-right: 15%;
+  list-style: none;
+  text-decoration: underline;
+  background-color: lightskyblue;
+  border: 2px solid black;
+}
+
+nav > ul > li {
+  font-size: 1.35rem;
+}
+.h2 {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline black;
+}
+h2 {
+  padding: 0px 35px 0px 35px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  padding: 0px 35px 0px 35px;
+}

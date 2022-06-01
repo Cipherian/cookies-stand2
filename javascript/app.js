@@ -72,7 +72,6 @@ City.prototype.tableBody = function () {
     rowElem.appendChild(dataElem);
     this.cookiesSale.push(cookiesSold);
   }
-
   //sum for cookies sale
   let sum = 0;
   for (let k = 0; k < storeHours.length; k++) {
