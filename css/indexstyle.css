@@ -3,6 +3,7 @@
 html {
   color:black;
   background-color: blanchedalmond;
+  height:fit-content;
 }
 
 .header {
@@ -13,10 +14,12 @@ html {
   text-shadow: 0 0 2px black;
   font-family: monospace;
   font-size: 1.5rem;
+  height:100px;
 }
 main {
   margin-left: 10%;
   margin-right: 10%;
+  height:600px;
 }
 
 ul {
@@ -49,4 +52,21 @@ h2 {
 
 p {
   padding: 0px 35px 0px 35px;
+}
+.images {
+  display: flex;
+  align-items: baseline;
+  overflow:scroll;
+  width:400px;
+  height:300px;
+}
+img {
+  align-self: center;
+}
+
+footer {
+  background-color: lightblue;
+  display: flex;
+  justify-content: end;
+  height: 100px;
 }
