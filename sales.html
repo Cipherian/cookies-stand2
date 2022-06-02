@@ -17,6 +17,23 @@
       <nav>
         <a href="https://cipherian.github.io/cookies-stand2/">Home</a>
       </nav>
+      <form id ="form">
+        <fieldset>
+          <label>Store Location 
+            <input type='text' name='storelocation' />
+          </label>
+          <label>Minimum Customers
+            <input type='number' name='minCust' required/>
+          </label>
+          <label>Maximum Customers 
+            <input type='number' name='maxCust' required/>
+          </label>
+          <label>Average Cookies Sold(hourly)
+            <input type='number' name='averageSold' required/>
+          </label>
+          <input class='button' type='submit' value='Submit'/>
+        </fieldset>
+      </form>
       <div class ="overflowScroll">
       <table>
         <thead id = "thead">
@@ -32,6 +49,9 @@
   <tbody id = "tbody2">
    
     
+  </tbody>
+  <tbody id = "tbody4">
+
   </tbody>
   <tfoot id = "tfoot">
     
