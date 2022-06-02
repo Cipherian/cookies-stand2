@@ -8,6 +8,11 @@ header {
   font-size: 3rem;
   text-align: center;
 }
+fieldset {
+  display:flex;
+  justify-content: space-between;
+  margin: 2%;
+}
 .overflowScroll {
   height: 300px;
 }

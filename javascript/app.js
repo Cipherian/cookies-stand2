@@ -31,8 +31,10 @@ let city2 = new City("Tokyo", 3, 24, 1.2);
 let city3 = new City("Dubai", 11, 38, 3.7);
 let city4 = new City("Paris", 20, 38, 2.3);
 let city5 = new City("Lima", 2, 16, 4.6);
+
 let storeLocationNames = ["Seattle", "Tokyo", "Dubai", "Paris", "Lima"];
 let cities = [city1, city2, city3, city4, city5];
+
 function renderHour() {
   let elemBody = document.getElementById("tbody");
   let rowElem = document.createElement("tr");
@@ -50,13 +52,17 @@ function renderHour() {
   rowElem.appendChild(endElem);
   elemBody.appendChild(rowElem);
 }
+// Takes input from form and injects it into constructor hopefully
+
+const form = document.getElementById("form");
+form.addEventListener("submit", formSubmit);
 
 City.prototype.tableBody = function () {
   let elemBody = document.getElementById("tbody2");
   let rowElem = document.createElement("tr");
   let citiesElem = document.createElement("th");
 
-  for (let i = 0; i < this.storeLocation.length; i++) {
+  for (let i = 0; i < storeLocationNames.length; i++) {
     citiesElem.innerText = this.storeLocation;
     rowElem.appendChild(citiesElem);
   }
@@ -66,7 +72,7 @@ City.prototype.tableBody = function () {
         Math.random() * (this.maxCustomers - this.minCustomers)
     );
     let cookiesSold = Math.round(randomCustomers * this.averageCookieSale);
-  
+
     let dataElem = document.createElement("td");
     dataElem.innerText = cookiesSold;
     rowElem.appendChild(dataElem);
@@ -82,36 +88,68 @@ City.prototype.tableBody = function () {
   rowElem.appendChild(locationTotal);
   elemBody.appendChild(rowElem);
 };
-for (let i = 0; i < cities.length; i++) {
-  let cit = cities[i];
-  cit.tableBody();
-}
+
 function renderFooter() {
-  let footElement = document.getElementById('tfoot');
-  let tableRow = document.createElement('tr');
-  let tableHeader = document.createElement('th');
-  tableHeader.innerText = 'Hourly totals for all locations';
+  let footElement = document.getElementById("tfoot");
+  let tableRow = document.createElement("tr");
+  let tableHeader = document.createElement("th");
+  tableHeader.innerText = "Hourly totals for all locations";
   tableRow.appendChild(tableHeader);
 
   let sumTotal = 0;
-  for (let i = 0; i < storeHours.length;i++){
+  for (let i = 0; i < storeHours.length; i++) {
     let hourlyTotal = 0;
-    for(let j = 0; j < cities.length; j++){
+    for (let j = 0; j < cities.length; j++) {
       let city = cities[j];
       hourlyTotal += city.cookiesSale[i];
       sumTotal += city.cookiesSale[i];
-      console.log(sumTotal)
     }
-  tableHeader = document.createElement('td');
+    tableHeader = document.createElement("td");
     tableHeader.innerText = hourlyTotal;
     tableRow.appendChild(tableHeader);
   }
-  tableHeader = document.createElement('td');
+  tableHeader = document.createElement("td");
   tableHeader.innerText = sumTotal;
   tableRow.appendChild(tableHeader);
   footElement.appendChild(tableRow);
 }
+City.prototype.renderForm = function() {
+  let form = document.getElementById("tbody4");
+  let tableRow = document.createElement("tr");
+  let citiesElem = document.createElement("th");
+  tableRow.appendChild(citiesElem);
+  citiesElem.innerText = this.storeLocation;
+  for (let i = 0; i < storeHours.length; i++) {
+    let dataElem = document.createElement("td");
+    dataElem.innerText = this.CookiesSale;
+    tableRow.appendChild(dataElem);
+  }
+  form.appendChild(tableRow);
+}
+function formSubmit(event) {
+  event.preventDefault();
+  let storeLocation = event.target.storelocation.value;
+  let minCustomers = Number(event.target.minCust.value);
+  let maxCustomers = Number(event.target.maxCust.value);
+  let averageCookieSale = Number(event.target.averageSold.value);
 
-renderHour();
+  let addLocation = new City(
+    storeLocation,
+    minCustomers,
+    maxCustomers,
+    averageCookieSale
+  );
+  cities.push(addLocation);
+  for (let i = 0; i < cities.length; i++) {
+    let cit = cities[i];
+    cit.renderForm();
+  }
+}
+
+
+for (let i = 0; i < cities.length; i++) {
+  let cit = cities[i];
+  cit.tableBody();
+}
 renderFooter();
-
+renderHour();
