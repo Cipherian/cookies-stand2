@@ -26,13 +26,13 @@
             <input type='text' name='storelocation' />
           </label>
           <label>Minimum Customers
-            <input type='number' name='minCust' required/>
+            <input type='number' name='minCust' min="1" max="99"  required/>
           </label>
           <label>Maximum Customers 
-            <input type='number' name='maxCust' required/>
+            <input type='number' name='maxCust' min="1" max="99" required/>
           </label>
           <label>Average Cookies Sold(hourly)
-            <input type='number' name='averageSold' required/>
+            <input type='number' name='averageSold' min="1" max="99" required/>
           </label>
           <input class='button' type='submit' value='Submit'/>
         </fieldset>
