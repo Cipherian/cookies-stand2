@@ -4,6 +4,7 @@ html {
   color:black;
   background-color: blanchedalmond;
   height:fit-content;
+  font-family: muli;
 }
 
 .header {
@@ -21,7 +22,6 @@ main {
   margin-right: 10%;
   height:600px;
 }
-
   ul {
   display:flex;
   justify-content: space-between;
@@ -35,11 +35,17 @@ main {
 
 .h2 {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   text-decoration: underline black;
+  margin: 0 10% 0 10%;
+  font-size: 1.5rem;
+  font-family: 'Dancing Script', cursive;
 }
-h2 {
-  padding: 0px 35px 0px 35px;
+#center {
+  padding-right: 25px;
+}
+#right {
+  padding-right: 75px;
 }
 
 .content {
@@ -48,17 +54,9 @@ h2 {
 }
 
 p {
-  padding: 0px 35px 0px 35px;
-}
-.images {
-  display: flex;
-  align-items: baseline;
-  overflow:scroll;
-  width:400px;
-  height:300px;
-}
-img {
-  align-self: center;
+  padding: 0px 45px 0px 45px;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  color: darkblue;
 }
 
 footer {
@@ -66,4 +64,7 @@ footer {
   display: flex;
   justify-content: end;
   height: 100px;
+}
+image {
+  justify-content: left;
 }
