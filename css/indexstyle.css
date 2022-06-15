@@ -63,7 +63,7 @@ footer {
   background-color: lightblue;
   display: flex;
   justify-content: end;
-  height: 100px;
+  height: 150px;
 }
 image {
   justify-content: left;
